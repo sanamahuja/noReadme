@@ -16,10 +16,10 @@ const BaseService = require("./Base-Service");
 /**
  * util functions import
  */
-const createNewTable = require("./MicroService1Utils/createNewTable");
-const UpdateTable = require("./MicroService1Utils/UpdateTable");
-const fetchAllTableIds = require("./MicroService1Utils/fetchAllTableIds");
-const fetchSingleTable = require("./MicroService1Utils/fetchSingleTable");
+const createNewTable = require("./Ms1Controllers/createNewTable");
+const UpdateTable = require("./Ms1Controllers/UpdateTable");
+const fetchAllTableIds = require("./Ms1Controllers/fetchAllTableIds");
+const fetchSingleTable = require("./Ms1Controllers/fetchSingleTable");
 
 //passport and local strategy requirement
 const passport = require("passport");
@@ -57,7 +57,7 @@ class ms1 extends BaseService {
         "Give DB connection string",
         `${
           process.env.status == "PRODUCTION"
-            ? "mongodb+srv://sanamahuja2000:atlasSanam@cluster0.kzveowp.mongodb.net/tableDb?retryWrites=true&w=majority/"
+            ? "mongodb+srv://sanamahuja2000:atlasSanam@cluster0.kzveowp.mongodb.net/tableDb?retryWrites=true&w=majority"
             : "mongodb://localhost:27017/tabletest"
         }`
       )
