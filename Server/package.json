@@ -1,0 +1,41 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Json Handler",
+  "main": "index.js",
+  "scripts": {
+    "start": "node microservice1.js",
+    "server": "nodemon microservice1.js",
+    "test": "mocha ",
+    "cover": "nyc --reporter=lcov --reporter=html --reporter=text  mocha"
+  },
+  "author": "Sanam",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "commander": "^10.0.0",
+    "connect-redis": "^7.0.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "http-proxy-middleware": "^2.0.6",
+    "mocha": "^10.2.0",
+    "mongodb-memory-server": "^8.12.1",
+    "mongoose": "^6.9.0",
+    "nyc": "^15.1.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "redis": "^4.6.5",
+    "session": "^0.1.0",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "jest": "^29.5.0",
+    "mocha": "*",
+    "nyc": "^15.1.0"
+  }
+}
