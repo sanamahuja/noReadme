@@ -51,7 +51,11 @@ class ms1 extends BaseService {
     //commander args
     this.program = super.cli();
     this.program
-      .option("--port <number>", " Give port number", "4000")
+      .option(
+        "--port <number>",
+        " Give port number",
+        `${process.env.status == "PRODUCTION" ? "4000" : "8080"}`
+      )
       .option(
         "--mongoURL <string>",
         "Give DB connection string",
@@ -64,9 +68,8 @@ class ms1 extends BaseService {
       .parse(process.argv);
   }
 
-  //
+  //defining passport strategy to authenticate
   passportLocal() {
-    //defining strategy to authenticate
     passport.use(
       new LocalStrategy((username, password, done) => {
         console.log(username, password);
